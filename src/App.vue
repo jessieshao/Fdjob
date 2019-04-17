@@ -25,7 +25,8 @@ export default {
 
 <style>
 .main{
-  background-color: #798A90;
-  min-height: 600px;
+  background-image: url(./assets/back.jpg);
+  min-height: 700px;
 }
+
 </style>

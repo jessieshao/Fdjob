@@ -1,6 +1,5 @@
-
 <template>
-    <div class="PostList">
+    <div class="JobMes">
         <div class="loading" v-if="isLoading">
             <img src="../assets/loading.gif" alt="">
         </div>
@@ -9,18 +8,11 @@
                 <li>
                     <div class="toobar">
                         <span>全部</span>
-                        <span>精华</span>
-                        <span>分享</span>
-                        <span>问答</span>
+                        <span>技术岗</span>
+                        <span>职能岗</span>
                     </div>
                 </li>
                 <li v-for="post in posts">
-                    <!--头像-->
-                    <img :src="post.author.avatar_url" alt="">
-                    <!--回复/浏览-->
-                    <span class="allcount">
-                        <span class="reply_count">{{post.reply_count}}</span>/{{post.visit_count}}
-                    </span>
                     <span :class="[{put_good:(post.good == true),put_top:(post.top ==true),
                     'topiclist-tab':(post.good != true && post.top !=true)}]">
                         <span>
@@ -38,6 +30,10 @@
                             {{post.title}}
                         </span>
                     </router-link>
+                    <!--回复/浏览-->
+                    <span class="allcount">
+                        <span class="reply_count">{{post.reply_count}}</span>/{{post.visit_count}}
+                    </span>
                     <!--更新时间-->
                     <span class="last_reply">
                         {{post.last_reply_at | formatDate}}
@@ -50,7 +46,7 @@
 
 <script>
 export default {
-    name: "PostList",
+    name:"JobMes",
     data(){
         return{
             isLoading:false,
@@ -59,7 +55,7 @@ export default {
     },
     methods:{
         getData(){
-            this.$http.get('https://cnodejs.org/api/v1/topics',{
+            this.$http.get('https://cnodejs.org/api/v1/topics/?tab=job',{
                 page: 1,
                 limit: 20,
             })
@@ -79,9 +75,8 @@ export default {
     }
 }
 </script>
-
 <style scoped>
-  .PostList{
+ .JobMes{
     width: 80%;
     margin: 0 auto;
     background-color: #e1e1e1;
@@ -91,8 +86,8 @@ export default {
   }
 
   .PostList img {
-    height: 30px;
-    width: 30px;
+    height: 80px;
+    width: 80px;
     vertical-align: middle;
   }
 

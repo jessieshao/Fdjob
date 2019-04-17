@@ -1,12 +1,11 @@
 <template>
     <div class="header">
-        <img src="" alt="">
         <ul class="">
             <li><router-link :to="{name:'root'}">首页</router-link></li>
-            <li><a href="#">注册</a></li>
-            <li><a href="#">招聘信息</a></li>
+            <li><router-link :to="{name:'register'}">注册</router-link></li>
+                        <li><a href="#">宣讲会</a></li>
+            <li><router-link :to="{name:'jobmes'}">招聘信息</router-link></li>
             <li><router-link :to="{name:'post'}">讨论区</router-link></li>
-            <li><a href="#">搜索</a></li>
         </ul>
     </div>
 </template>
@@ -22,6 +21,7 @@ export default {
     background-color: #3D444C;
     height: 50px;
 }
+
 ul{
     list-style: none;
     float: right;

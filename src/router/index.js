@@ -5,6 +5,9 @@ import Slide from '../components/Slide'
 //import Slide from '../components/Slide'
 import PostList from '../components/PostList'
 import UserInfo from '../components/UserInfo'
+import Register from '../components/Register'
+import JobMes from '../components/JobMes'
+
 
 
 Vue.use(Router)
@@ -38,6 +41,20 @@ export default new Router({
       components:{
         main:UserInfo
       }
-    }      
+    },
+    {
+      name: 'register',
+      path: '/register',
+      components:{
+        main:Register
+      }
+    }, 
+    {
+      name: 'jobmes',
+      path: '/jobmes',
+      components:{
+        main:JobMes
+      }
+    },         
   ]
 })

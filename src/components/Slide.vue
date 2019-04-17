@@ -1,10 +1,13 @@
 
 <template>
     <div class="slide">
+        <div class="search-area">
+            <input type="text" placeholder="搜索信息"><span class="button"> 搜索</span>
+        </div>
         <div class="images" id="slides" style="left:-1100px">
             <img src="../assets/job_4.jpg" alt="图片" width="1100" height="346">
             <img src="../assets/job_1.jpg" alt="图片" width="1100" height="346">
-            <img src="../assets/job_2.jpg" alt="图片" width="1100" height="346">
+            <img src="../assets/job_1.jpg" alt="图片" width="1100" height="346">
             <img src="../assets/job_3.jpg" alt="图片" width="1100" height="346">
             <img src="../assets/job_4.jpg" alt="图片" width="1100" height="346">
             <img src="../assets/job_1.jpg" alt="图片" width="1100" height="346">
@@ -37,13 +40,38 @@ export default {
 a{
     text-decoration: none;
 }
+.search-area{
+    margin-bottom: 40px;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    }
+.search-area input {
+    font-size: 1.1em;
+    width: calc(100% - 50px);
+    padding: 8px;
+    background-color: #eee;
+    border: none;
+    border-radius: 2px;
+    box-shadow: none;
+    outline: none;
+    }
+ .search-area .button{
+    position: absolute;
+    right: 0;
+    padding: 8px 10px;
+    background: #30AC3C;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    }
 .slide{
     position: relative;
     margin: 0 auto 0 auto;
     overflow: hidden;
-    height: 346px;
+    height: 446px;
     width: 1100px;
-    padding-top: 100px; 
+    padding-top: 80px; 
 }
 .images{
     position: absolute;
@@ -55,7 +83,7 @@ a{
     position: absolute;
     height: 20px;
     width: 300px;
-    bottom: 20px;
+    bottom: 30px;
     margin-left: 400px ;
     z-index: 2;
 }
@@ -64,15 +92,15 @@ a{
     width: 60px;
     height: 15px;
     cursor: pointer;
-    background-color: beige ;
-    opacity: 0.2;
+    background-color: black ;
+    opacity: 0.7;
 }
 .slide .buttons span.on{
     opacity: 0.5;
 }
 .slide .arrow{
     position: absolute;
-    top: 35%;
+    top: 55%;
     color: beige;
     opacity: 0.3;
     font-size: 70px;
